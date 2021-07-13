@@ -16,6 +16,10 @@ function testpwd(){
     {alert("两次密码输入不一致！");
     }
 }
+function testifblank(str){
+    if(str.length=="")
+    alert("请输入内容！");
+}
 </script>
 </head>
 <body>
@@ -27,9 +31,9 @@ function testpwd(){
     <br><br>
     <!--action处填写传入某文件处理的路径-->
     <form name="input" action="" method="POST" autocomplete="off">
-    <span style="color: red">*</span><span style="color:black ">院系 </span>
+    <span style="color: red;">*</span><span style="color:black ">院系 </span>
         <form action="">
-            <select name="department" style="width:300px;height: 50px;background-color:lightgray;">
+            <select name="department" style="width:300px;height: 35px;background-color:lightgray;">
             <option value="computer">计算机学院</option>
             <option value="math">数学科学学院</option>
             </select>
@@ -37,7 +41,7 @@ function testpwd(){
     <br>
     <span style="color: red">*</span><span style="color:black ">届次 </span>
         <form action="">
-            <select name="grade" style="width:300px;height: 50px;background-color:lightgray;">
+            <select name="grade" style="width:300px;height: 35px;background-color:lightgray;">
             <option value="2019">2019</option>
             <option value="2018">2018</option>
             </select>
@@ -45,59 +49,72 @@ function testpwd(){
     <br>
     <span style="color: red">*</span><span style="color:black ">专业 </span>
         <form action="">
-            <select name="major" style="width:300px;height: 50px;background-color:lightgray;">
+            <select name="major" style="width:300px;height: 35px;background-color:lightgray;">
             <option value="cs">计算机科学与技术</option>
             <option value="maths">数学</option>
             </select>
             </form>
     <br>
     <span style="color: red">*</span><span style="color:black ">邮箱 </span>
-            <form>
-                <input type="email" name="mail" style="width:300px;height: 50px;background-color:lightgray;"><br>
+            <form >
+                <input type="email" name="mail" 
+                onblur="testifblank(this.value)"
+                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">用户名 </span>
             <form>
-                <input type="text" name="username" style="width:300px;height: 50px;background-color:lightgray;"><br>
+                <input type="text" name="username" 
+                onblur="testifblank(this.value)"
+                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">密码 </span>
             <form>
-                <input type="password" id="pw1" name="password" style="width:300px;height: 50px;background-color:lightgray;"><br>
+                <input type="password" id="pw1" name="password" 
+                onblur="testifblank(this.value)"
+                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
  <span style="color: red">*</span><span style="color:black ">再次输入密码 </span>
             <form>
-                <input type="password" id="pw2" name="password" onblur="testpwd()" style="width:300px;height: 50px;background-color:lightgray;"><br>
+                <input type="password" id="pw2" name="password" onblur="testpwd()" 
+                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
     <p>学号</p>
     <form>
-        <input type="text" name="studentID" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="studentID" 
+        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
         </form>
     <br>
     <p>手机</p>
     <form>
-        <input type="text" id="tel" name="phone" maxlength=11 onblur="testtel()" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" id="tel" name="phone" maxlength=11 onblur="testtel()" 
+        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
         <div id="result"></div>
         </form>
     <br>
     <p>行业</p>
     <form>
-        <input type="text" name="industry" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="industry" 
+        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
         </form>
     <br>
     <p>城市</p>
     <form>
-        <input type="text" name="city" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="city" 
+        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
         </form>
     <br>
     <p>推荐人用户名</p>
     <form>
-        <input type="text" name="referrer" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="referrer" 
+        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
         </form>
     <br>
-    <input type="submit" value="进入问答匹配环节" style="background-color: #8FBC8F;width:250px;height:50px;">
+    <input type="submit" value="进入问答匹配环节" 
+    style="border-radius: 35px;background-color: #8FBC8F;width:235px;height:35px;">
 </form>
     <br>
     <p>点击 【进入问答匹配环节】按钮，计算问答得分，防止身份冒用</p>
