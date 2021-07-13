@@ -14,11 +14,31 @@ function testtel(){
 function testpwd(){
     if(document.getElementById("pw1").value!=document.getElementById("pw2").value)
     {alert("两次密码输入不一致！");
+    return false;
     }
 }
-function testifblank(str){
+/*function testifblank(str){
     if(str.length=="")
     alert("请输入内容！");
+}*/
+function check(){
+    if(testpwd()==false) return false;
+ var em=document.getElementById("em").value;
+ var id=document.getElementById("id").value;
+ var pwd=document.getElementById("pw2").value
+ if(em==""){
+     alert("请输入邮箱");
+     return false;
+ }
+ if(id==""){
+ alert("请输入用户名！");
+ return false;
+ }
+ if(pwd==""){
+ alert("请输入密码");
+ return false;
+ }
+ return true;
 }
 </script>
 </head>
@@ -57,28 +77,25 @@ function testifblank(str){
     <br>
     <span style="color: red">*</span><span style="color:black ">邮箱 </span>
             <form >
-                <input type="email" name="mail" 
-                onblur="testifblank(this.value)"
+                <input type="email" name="mail" id="em"
                 style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">用户名 </span>
             <form>
-                <input type="text" name="username" 
-                onblur="testifblank(this.value)"
+                <input type="text" name="username" id="id"
                 style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">密码 </span>
             <form>
                 <input type="password" id="pw1" name="password" 
-                onblur="testifblank(this.value)"
                 style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
  <span style="color: red">*</span><span style="color:black ">再次输入密码 </span>
             <form>
-                <input type="password" id="pw2" name="password" onblur="testpwd()" 
+                <input type="password" id="pw2" name="password" 
                 style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
                 </form>
             <br>
@@ -113,8 +130,8 @@ function testifblank(str){
         style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
         </form>
     <br>
-    <input type="submit" value="进入问答匹配环节" 
-    style="border-radius: 35px;background-color: #8FBC8F;width:235px;height:35px;">
+    <button type="submit" onclick="return check()"
+    style="border-radius: 35px;background-color: #8FBC8F;width:235px;height:35px;"> 进入问答匹配环节</button>
 </form>
     <br>
     <p>点击 【进入问答匹配环节】按钮，计算问答得分，防止身份冒用</p>

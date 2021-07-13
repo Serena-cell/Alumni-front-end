@@ -2,10 +2,22 @@
 <html>
 <head>
 <meta charset="utf-8">
+<!--<script src="../alumni/jquery.min.js">-->
+</script>
 <title>校友会登录</title>
 <script>
-function login(){
-
+function check(){
+ var id=document.getElementById("id").value;
+ var pwd=document.getElementById("pwd").value
+ if(id==""){
+ alert("请输入用户名！");
+ return false;
+ }
+ if(pwd==""){
+ alert("请输入密码");
+ return false;
+ }
+ return true;
 }
 </script>
 </head>
@@ -15,25 +27,26 @@ function login(){
     <div id="blank" style="background-color: white;width: 475px;height: 1000px;float: left;"></div>
 <div  align="center" style="width:300px;float: left;"> 
     <!--action处填写传入某文件处理的路径-->
-    <form name="input" action="" method="POST">
+    <form name="input" action="" method="POST" >
     <p style="font-size: large;">用户名</p>
     <div>
         <form>
-            <input type="text" name="username" 
-            style="border-style: solid;border-color:white;border-radius: 20px;width:300px;height: 35px;background-color:lightgray;"><br>
+            <input type="text" name="username" id="id"
+            style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
             </form></div>
     <br>
     <p style="font-size: large;">密码</p>
     <div style="float:right"><a href="http://www.baidu.com/" style="color: blue;">忘记密码?</a></div>
     <br>
-    <div style="border-style: solid;border-color:white;border-radius: 20px;width:300px;height: 35px;background-color:lightgray;">
+    <div style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;">
         <form>
-            <input type="password" name="password" 
-            style="border-style: solid;border-color:white;border-radius: 20px;width:300px;height: 35px;background-color:lightgray;"><br>
+            <input type="password" name="password" id="pwd"
+            style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
             </form></div>
     <br><br><br>
-    <div><input type="submit" value="登录" 
-        style="border-radius: 30px;background-color: #8FBC8F;width:300px;height:35px;">
+    <div><button type="submit"  
+        onclick="return check()"
+        style="border-radius: 30px;background-color: #8FBC8F;width:300px;height:35px;">登录</button>
     </form>
     </div>
     <div style="float:left"><a href="../alumni/register.html" style="color: blue;font-size: large;">创建账号</a>
