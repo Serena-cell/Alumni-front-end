@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <title>校友会注册</title>
+<script src="../alumni/jquery.min.js">
+</script>
 <script>
-
+function testtel(){
+    if(document.getElementById("tel").value.length!=11)
+    {alert("请输入十一位电话号码！");
+    }
+}
+function testpwd(){
+    if(document.getElementById("pw1").value!=document.getElementById("pw2").value)
+    {alert("两次密码输入不一致！");
+    }
+}
 </script>
 </head>
 <body>
@@ -15,20 +26,10 @@
     <a href="../alumni/login_page.html" style="float:right;color: blue;font-size: medium;">已有账号?登录--></a>
     <br><br>
     <!--action处填写传入某文件处理的路径-->
-    <form name="input" action="" method="POST">
-    <span style="color: red">*</span><span style="color:black ">学校 </span>
-        <form action="">
-            <select name="school" style="width:300px;height: 50px;background-color:lightgray;">
-            <option value="fudan">复旦大学</option>
-            <option value="qinghua">清华大学</option>
-            <option value="beijing">北京大学</option>
-            <option value="jiaotong">上海交通大学</option>
-            </select>
-            </form>
-    <br>
+    <form name="input" action="" method="POST" autocomplete="off">
     <span style="color: red">*</span><span style="color:black ">院系 </span>
         <form action="">
-            <select name="faculty" style="width:300px;height: 50px;background-color:lightgray;">
+            <select name="department" style="width:300px;height: 50px;background-color:lightgray;">
             <option value="computer">计算机学院</option>
             <option value="math">数学科学学院</option>
             </select>
@@ -36,7 +37,7 @@
     <br>
     <span style="color: red">*</span><span style="color:black ">届次 </span>
         <form action="">
-            <select name="year" style="width:300px;height: 50px;background-color:lightgray;">
+            <select name="grade" style="width:300px;height: 50px;background-color:lightgray;">
             <option value="2019">2019</option>
             <option value="2018">2018</option>
             </select>
@@ -50,14 +51,9 @@
             </select>
             </form>
     <br>
-    <span style="color: red">*</span><span style="color:black ">姓名 </span>
-        <form>
-            <input type="text" name="name" style="width:300px;height: 50px;background-color:lightgray;"><br>
-            </form>
-            <br>
     <span style="color: red">*</span><span style="color:black ">邮箱 </span>
             <form>
-                <input type="text" name="email" style="width:300px;height: 50px;background-color:lightgray;"><br>
+                <input type="email" name="mail" style="width:300px;height: 50px;background-color:lightgray;"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">用户名 </span>
@@ -67,22 +63,28 @@
             <br>
     <span style="color: red">*</span><span style="color:black ">密码 </span>
             <form>
-                <input type="text" name="password" style="width:300px;height: 50px;background-color:lightgray;"><br>
+                <input type="password" id="pw1" name="password" style="width:300px;height: 50px;background-color:lightgray;"><br>
+                </form>
+            <br>
+ <span style="color: red">*</span><span style="color:black ">再次输入密码 </span>
+            <form>
+                <input type="password" id="pw2" name="password" onblur="testpwd()" style="width:300px;height: 50px;background-color:lightgray;"><br>
                 </form>
             <br>
     <p>学号</p>
     <form>
-        <input type="text" name="student_id" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="studentID" style="width:300px;height: 50px;background-color:lightgray;"><br>
         </form>
     <br>
     <p>手机</p>
     <form>
-        <input type="text" name="tel" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" id="tel" name="phone" maxlength=11 onblur="testtel()" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <div id="result"></div>
         </form>
     <br>
     <p>行业</p>
     <form>
-        <input type="text" name="profession" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="industry" style="width:300px;height: 50px;background-color:lightgray;"><br>
         </form>
     <br>
     <p>城市</p>
@@ -92,7 +94,7 @@
     <br>
     <p>推荐人用户名</p>
     <form>
-        <input type="text" name="evaluater_id" style="width:300px;height: 50px;background-color:lightgray;"><br>
+        <input type="text" name="referrer" style="width:300px;height: 50px;background-color:lightgray;"><br>
         </form>
     <br>
     <input type="submit" value="进入问答匹配环节" style="background-color: #8FBC8F;width:250px;height:50px;">
