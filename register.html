@@ -52,9 +52,18 @@ function check(){
     .inputtext{
         border-style: solid;
         border-color:white;
+        width:250px;
+        height: 25px;
+        text-align: center;
+        position: relative;
+        left: 7%;
+    }
+    .selecttext{
         width:300px;
         height: 35px;
-        background-color:lightgray;}
+        background-color:whitesmoke;
+
+    }
     #container{
         width:300px;
         position: absolute;
@@ -63,6 +72,13 @@ function check(){
         left: 0;
         right: 0;
         margin: auto;
+       /* background-color:whitesmoke;
+        border-radius: 4%;*/
+    }
+    
+    body{
+        background-image: url(../alumni/images/oil_paint_sky.jpeg);
+        background-size: cover;
     }
 </style>
 </head>
@@ -71,14 +87,14 @@ function check(){
     <h1 align="center">创建账号</h1>
 <div> 
     <p style="color:red;">*为必填内容</p>
-    <a href="../alumni/login.html" style="float:right;color: blue;font-size: medium;">已有账号?登录-->
+    <a href="../alumni/login.html" style="float:right;color: rgb(77, 106, 200);font-size: medium;">已有账号?登录-->
     </a>
     <br><br>
     <!--action处填写传入某文件处理的路径-->
     <form name="input" action="" method="POST" autocomplete="off">
     <span style="color: red;">*</span><span style="color:black ">院系 </span>
         <form action="">
-            <select name="department" style="width:300px;height: 35px;background-color:lightgray;">
+            <select name="department" class="selecttext">
             <option value="computer">计算机学院</option>
             <option value="math">数学科学学院</option>
             </select>
@@ -86,7 +102,7 @@ function check(){
     <br>
     <span style="color: red">*</span><span style="color:black ">届次 </span>
         <form action="">
-            <select name="grade" style="width:300px;height: 35px;background-color:lightgray;">
+            <select name="grade" class="selecttext">
             <option value="2019">2019</option>
             <option value="2018">2018</option>
             </select>
@@ -94,7 +110,7 @@ function check(){
     <br>
     <span style="color: red">*</span><span style="color:black ">专业 </span>
         <form action="">
-            <select name="major" style="width:300px;height: 35px;background-color:lightgray;">
+            <select name="major" class="selecttext">
             <option value="cs">计算机科学与技术</option>
             <option value="maths">数学</option>
             </select>
@@ -102,23 +118,27 @@ function check(){
     <br>
     <span style="color: red">*</span><span style="color:black ">邮箱 </span>
             <form >
-                <input type="email" name="mail" id="em" class="inputtext"><br>
+                <input type="email" name="mail" id="em" class="inputtext"
+                placeholder="请输入邮箱"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">用户名 </span>
             <form>
-                <input type="text" name="username" id="id" class="inputtext"><br>
+                <input type="text" name="username" id="id" class="inputtext"
+                placeholder="请输入用户名"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">密码 </span>
             <form>
                 <input type="password" id="pw1" name="password" 
+                placeholder="请输入8-16位密码"
                 class="inputtext"><br>
                 </form>
             <br>
  <span style="color: red">*</span><span style="color:black ">再次输入密码 </span>
             <form>
-                <input type="password" id="pw2" name="password" 
+                <input type="password" id="pw2" name="password"
+                placeholder="请再次输入密码" 
                 class="inputtext"><br>
                 </form>
             <br>
@@ -131,6 +151,7 @@ function check(){
     <p>手机</p>
     <form>
         <input type="text" id="tel" name="phone" maxlength=11 onblur="testtel()" 
+        placeholder="仅接受11位手机号"
         class="inputtext"><br>
         <div id="result"></div>
         </form>
@@ -154,7 +175,7 @@ function check(){
         </form>
     <br>
     <button type="submit" onclick="return check()"
-    style="border-radius: 35px;background-color: #8FBC8F;width:300px;height:35px; "> 进入问答匹配环节</button>
+    style="border-radius: 35px;background-color: rgb(77, 106, 200);width:300px;height:35px; "> 进入问答匹配环节</button>
 </form>
     <br>
     <p>点击 【进入问答匹配环节】按钮，计算问答得分，防止身份冒用</p>
