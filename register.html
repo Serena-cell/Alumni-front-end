@@ -11,6 +11,12 @@ function testtel(){
     {alert("请输入十一位电话号码！");
     }
 }
+function testpwdl(){
+    if(document.getElementById("pw1").value.length<8||document.getElementById("pw1").value.length>16)
+    {alert("请输入8-16位密码！");
+    return false;
+    }
+}
 function testpwd(){
     if(document.getElementById("pw1").value!=document.getElementById("pw2").value)
     {alert("两次密码输入不一致！");
@@ -22,6 +28,7 @@ function testpwd(){
     alert("请输入内容！");
 }*/
 function check(){
+    if(testpwdl()==false) return false;
     if(testpwd()==false) return false;
  var em=document.getElementById("em").value;
  var id=document.getElementById("id").value;
