@@ -37,6 +37,10 @@ function check(){
         height: 25px;
         text-align: center;
     }
+    a:link{text-decoration: none;color:rgb(77, 106, 200);font-size: large;}
+    a:hover{text-decoration: underline;}
+    a:active{color: red;}
+    button:active{background-color:black;color: white;}
     body{
         background-image: url(../alumni/images/img.zcool.png) ;
         background-size: cover;
@@ -68,22 +72,22 @@ function check(){
             </form></div>
     <br>
     <div style="float:right">
-        <a href="../alumni/reset_password.html" 
-        style="color:rgb(77, 106, 200) ;text-decoration: none;">忘记密码?</a></div><br>
+        <a href="../alumni/reset_password.html"  class="link"
+        >忘记密码?</a></div><br>
     <div>
         <br>
     <button type="submit" onclick="return check()" 
-    style="border-radius:5%;background-color:rgb(77, 106, 200);width:250px;height:30px;position: relative; left:15%">
+    style="border-radius:5%;background-color:rgb(77, 106, 200);cursor:pointer;width:250px;height:30px;position: relative; left:15%">
         登录</button>
 </form>
     </div>
     <div style="float:left;position: relative; left:15%">
         <a href="../alumni/register.html" 
-        style="color: rgb(77, 106, 200) ;font-size: large;text-decoration: none;">创建账号</a>
+        class="link">创建账号</a>
 </div>
     <div style="float:right">
         <a href="../alumni/admin_login.html" 
-        style="color: rgb(77, 106, 200) ;font-size: large;text-decoration: none;">管理员登录</a>
+        class="link">管理员登录</a>
 </div>
 <br><br>
 <p style="position: relative; left:15%">点击【创建账号】按钮，进入注册界面</p>

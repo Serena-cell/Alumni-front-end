@@ -22,6 +22,11 @@
         height: 25px;
         text-align: center;
     }
+    a:link{text-decoration: none;color:rgb(77, 106, 200);font-size: large;}
+    a:hover{text-decoration: underline;}
+    a:active{color: red;}
+    button:active{background-color:black;color: white;}
+
         body{
         background-image: url(../alumni/images/img.zcool.png) ;
         background-size: cover;
@@ -73,16 +78,16 @@ function check(){
 
     <div style="float:right">
         <a href="../alumni/reset_password.html" 
-        style="color: rgb(77, 106, 200) ;text-decoration: none;">忘记密码?</a></div>
+        class="link">忘记密码?</a></div>
         <br><br>
     <div><button type="submit"  
         onclick="return check()"
-        style="float:left;position: relative; left:10%;border-radius: 30px;background-color:rgb(77, 106, 200);width:300px;height:35px;">登录</button>
+        style="cursor:pointer;float:left;position: relative; left:10%;border-radius: 30px;background-color:rgb(77, 106, 200);width:300px;height:35px;">登录</button>
     </form>
     </div>
     <div style="float:left">
         <a href="../alumni/register.html" 
-        style="float:left;position: relative; left:40%;color: rgb(77, 106, 200) ;font-size: large;text-decoration: none;">创建账号</a>
+        class="link" style="position:relative; left:40%">创建账号</a>
 </div>
 <br><br><br>
 <p style="font-size: small;float:left;position: relative; left:10%;">点击【忘记密码】小字部分，进入重置密码界面</p>

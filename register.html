@@ -72,12 +72,16 @@ function check(){
         left: 0;
         right: 0;
         margin: auto;
-       /* background-color:whitesmoke;
-        border-radius: 4%;*/
+        /*background-color:whitesmoke;*/
+        border-radius:4%;
+        /*overflow: scroll;*/
     }
-    
+    a:link{text-decoration: none;color:rgb(77, 106, 200);font-size: large;}
+    a:hover{text-decoration: underline;}
+    a:active{color: red;}
+    button:active{background-color:black;color: white;}
     body{
-        background-image: url(../alumni/images/oil_paint_sky.jpeg);
+        background-image: url(../alumni/images/bkg_blue.png);
         background-size: cover;
     }
 </style>
@@ -87,7 +91,7 @@ function check(){
     <h1 align="center">创建账号</h1>
 <div> 
     <p style="color:red;">*为必填内容</p>
-    <a href="../alumni/login.html" style="float:right;color: rgb(77, 106, 200);font-size: medium;">已有账号?登录-->
+    <a href="../alumni/login.html" class="link" style="float:right;font-size: medium;">已有账号?登录-->
     </a>
     <br><br>
     <!--action处填写传入某文件处理的路径-->
@@ -175,7 +179,7 @@ function check(){
         </form>
     <br>
     <button type="submit" onclick="return check()"
-    style="border-radius: 35px;background-color: rgb(77, 106, 200);width:300px;height:35px; "> 进入问答匹配环节</button>
+    style="background-color: rgb(77, 106, 200);border-radius: 35px;cursor:pointer;width:300px;height:35px; "> 进入问答匹配环节</button>
 </form>
     <br>
     <p>点击 【进入问答匹配环节】按钮，计算问答得分，防止身份冒用</p>
