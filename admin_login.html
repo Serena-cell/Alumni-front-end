@@ -3,6 +3,17 @@
 <head>
 <meta charset="utf-8">
 <!--<script src="../alumni/jquery.min.js">-->
+<style>
+        #container{
+            width:300px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
 </script>
 <title>校友会登录</title>
 <script>
@@ -22,10 +33,10 @@ function check(){
 </script>
 </head>
 <body>
+    <div id="container">
     <h1 align="center">管理员登录</h1>
     <br>
-    <div id="blank" style="background-color: white;width: 475px;height: 1000px;float: left;"></div>
-<div  align="center" style="width:300px;float: left;"> 
+<div style="width:300px;"> 
     <!--action处填写传入某文件处理的路径-->
     <form name="input" action="" method="POST" >
     <p style="font-size: large;">用户名</p>
@@ -35,10 +46,10 @@ function check(){
             style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
             </form></div>
     <br>
-    <p style="font-size: large;">密码</p>
+    <div style="font-size: large;float: left;">密码</div>
     <div style="float:right"><a href="../alumni/reset_password.html" style="color: blue;">忘记密码?</a></div>
     <br>
-    <div style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;">
+    <div>
         <form>
             <input type="password" name="password" id="pwd"
             style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
@@ -55,3 +66,4 @@ function check(){
 <p>点击【忘记密码】小字部分，进入重置密码界面:</p>
 </div>
 </body>
+</html>

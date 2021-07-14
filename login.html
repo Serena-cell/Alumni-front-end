@@ -18,12 +18,23 @@ function check(){
  return true;
 }
 </script>
+<style>
+    #container{
+        width:300px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
 </head>
 <body>
+    <div id="container">
     <h1 align="center">登录校友会平台</h1>
     <br>
-    <div id="blank" style="background-color: white;width: 475px;height: 1000px;float: left;"></div>
-<div  align="center" style="width:300px;float: left;"> 
+<div  style="width:300px;"> 
     <!--action处填写传入某文件处理的路径-->
     <form name="input" action="" method="POST">
     <p style="font-size: large;">用户名</p>
@@ -33,10 +44,10 @@ function check(){
             style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
             </form></div>
     <br>
-    <p style="font-size: large;">密码</p>
+    <div style="font-size: large;float: left;">密码</div>
     <div style="float:right"><a href="../alumni/reset_password.html" style="color: blue;">忘记密码?</a></div>
     <br>
-    <div style="width:300px;height: 35px;background-color:lightgray;">
+    <div>
         <form>
             <input type="password" name="password"  id="pwd"
             style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
@@ -55,3 +66,4 @@ function check(){
 <p>点击【创建账号】按钮，进入注册界面：</p>
 </div>
 </body>
+</html>

@@ -41,13 +41,31 @@ function check(){
  return true;
 }
 </script>
+<style>
+    .inputtext{
+        border-style: solid;
+        border-color:white;
+        width:300px;
+        height: 35px;
+        background-color:lightgray;}
+    #container{
+        width:300px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+</style>
 </head>
 <body>
+    <div id="container" >
     <h1 align="center">创建账号</h1>
-    <div id="blank" style="background-color: white;width: 475px;height: 2000px;float: left;"></div>
-<div  align="center" style="width:300px;float: left;"> 
+<div> 
     <p style="color:red;">*为必填内容</p>
-    <a href="../alumni/login.html" style="float:right;color: blue;font-size: medium;">已有账号?登录--></a>
+    <a href="../alumni/login.html" style="float:right;color: blue;font-size: medium;">已有账号?登录-->
+    </a>
     <br><br>
     <!--action处填写传入某文件处理的路径-->
     <form name="input" action="" method="POST" autocomplete="off">
@@ -77,64 +95,64 @@ function check(){
     <br>
     <span style="color: red">*</span><span style="color:black ">邮箱 </span>
             <form >
-                <input type="email" name="mail" id="em"
-                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+                <input type="email" name="mail" id="em" class="inputtext"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">用户名 </span>
             <form>
-                <input type="text" name="username" id="id"
-                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+                <input type="text" name="username" id="id" class="inputtext"><br>
                 </form>
             <br>
     <span style="color: red">*</span><span style="color:black ">密码 </span>
             <form>
                 <input type="password" id="pw1" name="password" 
-                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+                class="inputtext"><br>
                 </form>
             <br>
  <span style="color: red">*</span><span style="color:black ">再次输入密码 </span>
             <form>
                 <input type="password" id="pw2" name="password" 
-                style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+                class="inputtext"><br>
                 </form>
             <br>
     <p>学号</p>
     <form>
         <input type="text" name="studentID" 
-        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+        class="inputtext"><br>
         </form>
     <br>
     <p>手机</p>
     <form>
         <input type="text" id="tel" name="phone" maxlength=11 onblur="testtel()" 
-        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+        class="inputtext"><br>
         <div id="result"></div>
         </form>
     <br>
     <p>行业</p>
     <form>
         <input type="text" name="industry" 
-        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+        class="inputtext"><br>
         </form>
     <br>
     <p>城市</p>
     <form>
         <input type="text" name="city" 
-        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+        class="inputtext"><br>
         </form>
     <br>
     <p>推荐人用户名</p>
     <form>
         <input type="text" name="referrer" 
-        style="border-style: solid;border-color:white;width:300px;height: 35px;background-color:lightgray;"><br>
+        class="inputtext"><br>
         </form>
     <br>
     <button type="submit" onclick="return check()"
-    style="border-radius: 35px;background-color: #8FBC8F;width:235px;height:35px;"> 进入问答匹配环节</button>
+    style="border-radius: 35px;background-color: #8FBC8F;width:300px;height:35px; "> 进入问答匹配环节</button>
 </form>
     <br>
     <p>点击 【进入问答匹配环节】按钮，计算问答得分，防止身份冒用</p>
     <p>点击【管理员登录】小字部分，进入管理员登录界面</p>
-</div>
+    </div>
+    </div>
 </body>
+</html>
