@@ -18,25 +18,71 @@
  return true;
 }
 </script>
+<script src="/ueditor-dev-1.5.0/ueditor.config.js"></script>
+    <script src="/ueditor-dev-1.5.0/_examples/editor_api.js"></script>
+    <script src="/ueditor-dev-1.5.0/lang/zh-cn/zh-cn.js"></script>
+    <script src="jquery.min.js">
+        //实例化编辑器
+        $(document).ready(function(){
+			var ue = window.UE.getEditor('ueditor',
+         {toolbars: [
+            'undo', //撤销
+            'bold', //加粗
+            'underline', //下划线
+            'preview', //预览
+            'horizontal', //分隔线
+            'inserttitle', //插入标题
+            'cleardoc', //清空文档
+            'fontfamily', //字体
+            'fontsize', //字号
+            'paragraph', //段落格式
+            'simpleupload', //单图上传
+            'insertimage', //多图上传
+            'attachment', //附件
+            'music', //音乐
+            'inserttable', //插入表格
+            'emotion', //表情
+            'insertvideo', //视频
+            'justifyleft', //居左对齐
+            'justifyright', //居右对齐
+            'justifycenter', //居中对
+            'justifyjustify', //两端对齐
+            'forecolor', //字体颜色
+            'fullscreen', //全屏
+            'edittip ', //编辑提示
+            'customstyle', //自定义标题
+            'template', //模板
+             ]
+        });
+			//编辑器默认值赋值
+			ue.ready(function() {//编辑器初始化完成再赋值
+				ue.setContent("ueditor");  //赋值给UEditor
+			});
+			
+		});
+    </script>
 </head>
 <body >
 <h2 align="center" 
-style="background-image:linear-gradient(45deg, #8FBC8F, white);">创建你的帖子</h2>
+style="background-image:linear-gradient(45deg, rgb(77, 106, 200), white);">创建你的帖子</h2>
 <!--action处填写传入某文件处理的路径-->
 <form name="input" action="" method="POST" >
     <input type="text" name="title"  id="title"
     placeholder="请输入帖子标题"
-    style="width:1300px;height: 50px;"><br>
+    style="width:99%;height: 50px;"><br>
     <!--此处添加帖子tag部分的代码 参见主站界面的html文件-->
     <!--relatedActivity存在时其值该如何取？-->
     <div>是否是活动帖？</div>
     <input type="radio" name="relatedActivity" value="">是<br>
     <input type="radio" name="relatedActivity" value="0">不是
-    <input type="text" name="content"  id="content"
+    <!--<input type="text" name="content"  id="content" 
     placeholder="请输入帖子内容"
-    style="width:1300px;height: 500px;"><br>
+    style="width:1300px;height: 500px;"><br>-->
+    <br>
+    <textarea id="ueditor" style="width: 99%;" ></textarea>
+    <br>
     <button type="submit" onclick="return check()" 
-    style="cursor:pointer;border-radius: 30px;background-color: #8FBC8F;width:240px;height:35px;">提交</button>
+    style="cursor:pointer;border-radius: 30px;background-color: rgb(77, 106, 200);width:240px;height:35px;">提交</button>
     </form>
 </body>
 </html>

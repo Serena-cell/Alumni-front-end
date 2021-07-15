@@ -2,90 +2,61 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>校友会主帖</title>
+<title>校友会成员个人主页</title>
 <script>
-    function filter_area(){
-        document.getElementById("topics").innerHTML="显示地域筛选后的帖子";
-    }
-    function filter_profession(){
-        document.getElementById("topics").innerHTML="显示行业筛选后的帖子";
-    }
-    function filter_follow(){
-        document.getElementById("topics").innerHTML="显示你关注人发布的帖子";
-    }
-
-    var xmlhttp;
-    function showHint(str)
-{
-var xmlhttp;
-if (str.length==0)
-  { 
-  document.getElementById("txtHint").innerHTML="";
-  return;
-  }
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-    }
-    else{
-      alert("you have accountered retrieving problem! \n your xmlhttprequest variable has status as "+xmlhttp.status)
-    }
-  }
-xmlhttp.open("GET","../alumni/asp/gethint.asp?q="+str,true);
-xmlhttp.send();
-}
+   function alert_if(){
+     alert("您已在首页！");
+   }
 </script>
+<style>
+ul{
+    text-align: center;
+    margin: 0%;
+    padding:1%;
+    position: fixed;
+    width:100%;
+    background-color:rgb(77, 106, 200);
+  }
+  li
+{
+	display:inline;
+}
+ a:link,a.visited{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 1%;
+    margin: 0%;
+    text-decoration: none;
+    color:whitesmoke;
+ }
+ a:hover,a.active{
+    background-color:rgb(77, 106, 255);
+    color:white;
+ }
+</style>
 </head>
 <body>
-<!--主背景色设置-->
-<div  id="back_ground" style="width: 1200px;background-color:white;">
-<!--头像区域-->
-<div id="face" style="width:192px;height: 100px;background-color:lightgreen;float: left;">
-<p>头像
-<a href="http://www.baidu.com/">
-<img border="0" src="images/IMG_20180614_112549.jpg" alt="头像" width="64" height="64"></a></p></div>
-<!--搜索框部分-->
-<div id="search" style="width:1008px;height:100px;background-color:greenyellow;float: left;">
-<form name="input" action="html_form_action.php" method="get">
-        搜索帖子: <input type="text" name="topic_name">
-        <input type="submit" value="提交">
-        </form></div>
-<!--筛选器-->
-<div id="filter" style="width:250px;height:600px;background-color:lightgrey;float: left;">
-    <form>
-        <button type="button" onclick="filter_area()">按地域</button>
-        <br><br>
-        <button type="button" onclick="filter_profession()">按行业</button>
-        <br><br>
-        <button type="button" onclick="filter_follow()">按关注人</button>
-        </form></div>
-<!--帖子展示区，默认显示该校校友全部帖-->
-<div id="topics" style="width:950px;height:550px;background-color:rgb(253,253,110);float: left;">
-    <a href="https://www.baidu.com/" target="_blank">帖子1 作者 标题 发布时间</a><br><br>
-    <a href="https://www.baidu.com/" target="_blank">帖子2 作者 标题 发布时间</a><br><br>
-    <a href="https://www.baidu.com/" target="_blank">帖子3 作者 标题 发布时间</a><br><br>
-    <a href="https://www.baidu.com/" target="_blank">帖子4 作者 标题 发布时间</a><br><br>
-    <a href="https://www.baidu.com/" target="_blank">帖子5 作者 标题 发布时间</a><br><br>
-    <a href="https://www.baidu.com/" target="_blank">帖子6 作者 标题 发布时间</a><br><br>
-    <h3>请在下面的输入框中键入字母（A - Z）：</h3>
-    <form action=""> 
-    姓氏：<input type="text" id="txt1" onkeyup="showHint(this.value)" />
-    </form>
-    <p>建议：<span id="txtHint"></span></p> 
-</div>
-<!--发帖按钮，跳转发帖页面-->
-<div id="to_post" style="width:950px;height:50px;background-color:white;float: left;">
-    <a href="https://www.baidu.com/" target="_blank">发帖</a></div>
-</div>
-</body>
+ <ul>
+   <li><a href="" onclick="alert_if()">首页</a></li>
+   <li><a href="#topics">同城</a></li>
+   <li><a href="#topics">同行</a></li>
+   <li><a href="#topics">关注</a></li>
+ </ul>
+ <div>
+   <form>
+     <input type="text" placeholder="请选择您要寻找的帖子的基本信息">
+   </form>
+ </div>
+ <!--个人信息分区-->
+ <div id="information">
+
+ </div>
+ <!--个人动态及部分帖子显示区-->
+ <div id="topics">
+
+ </div>
+ <!--全站热帖展示区-->
+ <div id="hot_topics">
+
+ </div>
 </html>

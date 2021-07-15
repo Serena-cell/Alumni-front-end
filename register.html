@@ -52,11 +52,10 @@ function check(){
     .inputtext{
         border-style: solid;
         border-color:white;
-        width:250px;
+        width:290px;
         height: 25px;
         text-align: center;
         position: relative;
-        left: 7%;
     }
     .selecttext{
         width:300px;
@@ -79,7 +78,7 @@ function check(){
     a:link{text-decoration: none;color:rgb(77, 106, 200);font-size: large;}
     a:hover{text-decoration: underline;}
     a:active{color: red;}
-    button:active{background-color:black;color: white;}
+    button:active{background-color:rgb(58, 33, 33);color:white;}
     body{
         background-image: url(../alumni/images/bkg_blue.png);
         background-size: cover;
@@ -146,13 +145,13 @@ function check(){
                 class="inputtext"><br>
                 </form>
             <br>
-    <p>学号</p>
+    <div>学号</div>
     <form>
         <input type="text" name="studentID" 
         class="inputtext"><br>
         </form>
     <br>
-    <p>手机</p>
+    <div>手机</div>
     <form>
         <input type="text" id="tel" name="phone" maxlength=11 onblur="testtel()" 
         placeholder="仅接受11位手机号"
@@ -160,19 +159,19 @@ function check(){
         <div id="result"></div>
         </form>
     <br>
-    <p>行业</p>
+    <div>行业</div>
     <form>
         <input type="text" name="industry" 
         class="inputtext"><br>
         </form>
     <br>
-    <p>城市</p>
+    <div>城市</div>
     <form>
         <input type="text" name="city" 
         class="inputtext"><br>
         </form>
     <br>
-    <p>推荐人用户名</p>
+    <div>推荐人用户名</div>
     <form>
         <input type="text" name="referrer" 
         class="inputtext"><br>

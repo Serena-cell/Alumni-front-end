@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .editorBox {
+            width: 100%;
+            min-height: 200px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="editorBox" contenteditable="true">
+        hello world!
+    </div>
+    <button onclick="handleStyle('Bold')">加粗</button>
+    <button onclick="handleStyle('Italic')">斜体</button>
+    <button onclick="handleStyle('Underline')">下划线</button>
+    <button onclick="handleStyle('StrikeThrough')">删除线</button><br/>
+    字间距值：<input type="text" id="letterSpacingValue" value="50">px
+    <button onclick="setStyle('letterSpacing')">设置字体间距</button><br/>
+    <script>
+        //设置简单的字体风格
+        function handleStyle(type,val) {
+            document.execCommand('StyleWithCSS',true,true)
+            document.execCommand(type,false,val)
+        }
+
+        //设置比较复杂的字体样式，笔者只写了一个字间距，如果向设置其他的可按此规则重复利用此模块
+        function setStyle(type) {
+            let letterSpacingVal = document.getElementById('letterSpacingValue').value;
+            document.execCommand('styleWithCSS',true,true)
+            document.execCommand('Bold')
+            //获取选中的内容节点
+            let select = document.getSelection().anchorNode.parentElement;
+            select.style[type] = val + 'px';
+            document.execCommand('Bold')
+        }
+    </script>
+</body>
+</html>
+
